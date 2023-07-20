@@ -55,7 +55,7 @@ module.exports = function (jwtString, secretOrPublicKey, options, callback) {
   }
 
   const time = new Date();
-  const clockTimestamp = options.clockTimestamp || Math.floor((time.getTime() - time.getTimezoneOffset() * 6000) / 1000);
+  const clockTimestamp = options.clockTimestamp || Math.floor((time.getTime() - time.getTimezoneOffset() * 60000) / 1000);
 
   if (!jwtString){
     return done(new JsonWebTokenError('jwt must be provided'));

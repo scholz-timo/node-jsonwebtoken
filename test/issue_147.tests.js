@@ -8,7 +8,7 @@ describe('issue 147 - signing with a sealed payload', function() {
     var result = jwt.verify(token, '123');
 
     const time = new Date();
-    expect(result.exp).to.be.closeTo(Math.floor((time.getTime() - time.getTimezoneOffset() * 6000) / 1000) + 10, 0.2);
+    expect(result.exp).to.be.closeTo(Math.floor((time.getTime() - time.getTimezoneOffset() * 60000) / 1000) + 10, 0.2);
   });
 
 });

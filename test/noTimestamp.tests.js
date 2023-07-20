@@ -8,7 +8,7 @@ describe('noTimestamp', function() {
     var result = jwt.verify(token, '123');
     const time = new Date();
 
-    expect(result.exp).to.be.closeTo(Math.floor((time.getTime() - time.getTimezoneOffset() * 6000) / 1000) + (5*60), 0.5);
+    expect(result.exp).to.be.closeTo(Math.floor((time.getTime() - time.getTimezoneOffset() * 60000) / 1000) + (5*60), 0.5);
   });
 
 });

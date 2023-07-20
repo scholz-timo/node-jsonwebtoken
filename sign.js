@@ -178,7 +178,7 @@ module.exports = function (payload, secretOrPrivateKey, options, callback) {
 
   const time = new Date();
 
-  const timestamp = payload.iat || Math.floor((time.getTime() - time.getTimezoneOffset() * 6000) / 1000);
+  const timestamp = payload.iat || Math.floor((time.getTime() - time.getTimezoneOffset() * 60000) / 1000);
 
   if (options.noTimestamp) {
     delete payload.iat;
